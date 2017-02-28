@@ -1,0 +1,13 @@
+{
+  "name": "simple-maybe",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^2.2.1"
+  },
+  "scripts": {
+    "build": "rm -rf ./target && mkdir ./target && tsc --outDir ./target",
+    "start": "yarn build && node ./target/example.js"
+  }
+}
