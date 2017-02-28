@@ -15,7 +15,7 @@ export const flatMapMaybe = <T, B>(maybeT: Maybe<T>, f: (t: T) => B): Maybe<B> =
     isNotUndefined(maybeT) ? f(maybeT) : maybeT
 )
 // extend {} to ensure we're mapping to a non-null type
-export const mapMaybe = <T, B extends {}>(maybeT: Maybe<T>, f: (t: T) => B): Maybe<B> => (
+export const mapMaybe = <T, B extends {}>(f: (t: T) => B) => (maybeT: Maybe<T>): Maybe<B> => (
     isNotUndefined(maybeT) ? f(maybeT) : maybeT
 )
 export const filterMaybe = <T, B extends T>(maybeT: Maybe<T>, f: (t: T) => t is B): Maybe<B> => (
