@@ -38,3 +38,6 @@ export type StringDictionary<T> = { [k: string]: T };
 export const safeProp = <T>(dict: StringDictionary<T>, prop: string): Maybe<T> => dict[prop]
 export const safeIndex = <T>(array: T[], prop: number): Maybe<T> => array[prop]
 export const safeHead = <T>(array: T[]): Maybe<T> => safeIndex(array, 0)
+
+export const normalizeMaybe = <T>(nullMaybe: T | null) =>
+  nullMaybe === null ? undefined : nullMaybe;
